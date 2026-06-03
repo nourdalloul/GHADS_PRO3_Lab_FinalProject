@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+
+<VBox alignment="CENTER" spacing="15.0" xmlns:fx="http://javafx.com/fxml/1" stylesheets="@../styles/adminStyle.css" fx:controller="controllers.CoordFamilyController">
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+    
+    <Label text="Register New Family" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+    
+    <TextField fx:id="nationalIdField" promptText="National ID" maxWidth="300" />
+    <TextField fx:id="familyNameField" promptText="Family Head Name" maxWidth="300" />
+    <TextField fx:id="membersCountField" promptText="Number of Members" maxWidth="300" />
+    <TextField fx:id="addressField" promptText="Address" maxWidth="300" />
+    
+    <Button text="Register Family" onAction="#handleRegisterFamily" 
+            style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-padding: 10 20; -fx-cursor: hand;"/>
+</VBox>

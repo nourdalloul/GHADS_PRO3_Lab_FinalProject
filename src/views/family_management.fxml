@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox spacing="15.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" stylesheets="@../styles/adminStyle.css" fx:controller="controllers.FamilyController" styleClass="content-pane">
+    <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+    
+    <Label text="Family Management" styleClass="content-title" />
+    
+    <TableView fx:id="familyTable" prefHeight="300.0">
+        <columns>
+            <TableColumn fx:id="idCol" text="ID" />
+            <TableColumn fx:id="nameCol" text="Name" />
+            <TableColumn fx:id="locationCol" text="Location" /> 
+            <TableColumn fx:id="phoneCol" text="Phone" />
+            <TableColumn fx:id="nationalIdCol" text="National ID" />
+            <TableColumn fx:id="sizeCol" text="Size" />
+            <TableColumn fx:id="vulnerabilityCol" text="Vulnerability" />
+        </columns>
+    </TableView>
+    
+    <GridPane hgap="10" vgap="10">
+        <TextField fx:id="nameField" promptText="Household Name" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+        <TextField fx:id="locationField" promptText="Location" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+    
+        <TextField fx:id="phoneField" promptText="Phone" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+        <TextField fx:id="nationalIdField" promptText="National ID" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+    
+        <TextField fx:id="sizeField" promptText="Family Size" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+        <TextField fx:id="vulnerabilityField" promptText="Vulnerability Level" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+    
+        <TextField fx:id="familyIdField" promptText="Family ID" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+    </GridPane>
+    
+    <HBox spacing="10">
+        <Button text="Add Family" onAction="#handleAdd" styleClass="sidebar-btn"/>
+        <Button text="Edit Selected" onAction="#handleEdit" styleClass="sidebar-btn"/>
+        <Button text="Delete Selected" onAction="#handleDelete" styleClass="logout-btn"/>
+    </HBox>
+</VBox>

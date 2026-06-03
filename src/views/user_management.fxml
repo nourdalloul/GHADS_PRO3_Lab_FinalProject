@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox spacing="15.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" stylesheets="@../styles/adminStyle.css" fx:controller="controllers.UserManagementController" styleClass="content-pane">
+    
+    <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+    
+    <Label text="User Management" styleClass="content-title" />
+    
+    <TableView fx:id="userTable" prefHeight="300.0">
+        <columns>
+            <TableColumn fx:id="nameCol" text="Full Name" prefWidth="150"/>
+            <TableColumn fx:id="usernameCol" text="Username" prefWidth="100"/>
+            <TableColumn fx:id="emailCol" text="Email" prefWidth="150"/>
+            <TableColumn fx:id="roleCol" text="Role" prefWidth="100"/>
+            <TableColumn fx:id="orgCol" text="Org ID" prefWidth="80"/>
+        </columns>
+    </TableView>
+    
+    <GridPane hgap="10" vgap="10">
+        <TextField fx:id="nameField" promptText="Full Name" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+        <TextField fx:id="usernameField" promptText="Username" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+        <TextField fx:id="emailField" promptText="Email" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+        <PasswordField fx:id="passField" promptText="Password" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+        <ComboBox fx:id="roleCombo" promptText="Select Role" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+        <ComboBox fx:id="orgCombo" promptText="Select Organization" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+    </GridPane>
+    
+    <HBox spacing="10">
+        <Button text="Add User" onAction="#handleAddUser" styleClass="sidebar-btn"/>
+        <Button text="Edit Selected" onAction="#handleEditUser" styleClass="sidebar-btn"/>
+        <Button text="Delete Selected" onAction="#handleDeleteUser" styleClass="logout-btn"/>
+    </HBox>
+</VBox>

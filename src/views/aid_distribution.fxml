@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+
+<VBox alignment="TOP_CENTER" styleClass="aid-form-container" stylesheets="@../styles/mainScreenStyle.css" spacing="15.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.AidController">
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+    
+    <Label text="Aid Distribution &amp; Vulnerability Check" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+    
+    <VBox spacing="10" maxWidth="400" style="-fx-background-color: white; -fx-padding: 15; -fx-border-color: #dcdde1; -fx-border-radius: 5;">
+        <Label text="Record New Aid" style="-fx-font-weight: bold;"/>
+        <TextField fx:id="familyIdField" promptText="Enter Family ID" />
+        <TextField fx:id="aidTypeField" promptText="Aid Type (e.g., Food, Cash)" />
+        <TextField fx:id="orgNameField" promptText="Organization Name" />
+        <TextField fx:id="distributedByField" promptText="Distributed By (Name)" />
+        <Button text="Save Distribution" onAction="#handleSaveAid" 
+                style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-pref-width: 400;"/>
+    </VBox>
+    
+    <Label text="Vulnerable Families List" style="-fx-font-weight: bold; -fx-padding: 10 0 0 0;"/>
+    <TableView fx:id="vulnerableTable" prefHeight="250" prefWidth="600">
+        <columns>
+            <TableColumn fx:id="nameCol" text="Family Name" prefWidth="150"/>
+            <TableColumn fx:id="vulnCol" text="Vulnerability" prefWidth="150"/>
+            <TableColumn fx:id="statusCol" text="Service Status" prefWidth="200"/>
+        </columns>
+    </TableView>
+</VBox>

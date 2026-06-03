@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox spacing="10" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.DistributionController" stylesheets="@../styles/mainScreenStyle.css" >
+    <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+    
+    <Label text="Aid Distribution Management" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+    
+    <HBox spacing="10">
+        <ComboBox fx:id="orgSearchCombo" promptText="Select Organization"/>
+        <Button text="Search" onAction="#handleSearch" style="-fx-background-color: #3498db; -fx-text-fill: white;"/>
+    </HBox>
+
+    <TableView fx:id="distTable" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="orgCol" text="Organization" prefWidth="150"/>
+            <TableColumn fx:id="typeCol" text="Aid Type" prefWidth="100"/>
+            <TableColumn fx:id="dateCol" text="Date" prefWidth="100"/>
+        </columns>
+    </TableView>
+</VBox>
